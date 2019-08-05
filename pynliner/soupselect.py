@@ -103,6 +103,8 @@ def contains_all_classes_checker(required_classes, el):
 def get_checker(functions):
     def checker(el):
         for func in functions:
+            if not el:
+                return False
             if not func(el):
                 return False
         return el
